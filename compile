@@ -1,0 +1,16 @@
+#!/bin/bash
+# Compile script
+
+SRC=boxIt.cpp
+TGT=bi
+
+if [ -f $TGT ]; then
+	rm -f $TGT
+fi
+
+# Using clang++ compiler
+clang++ -Wall -std=c++17 $SRC -o $TGT
+
+# Using Intel C++ compiler
+# icpx -Wall -std=c++17 -fsycl $SRC -o $TGT
+# icpc -Wall -std=c++17 -diag-disable=10441 $SRC -o $TGT
